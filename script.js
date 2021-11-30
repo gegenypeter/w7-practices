@@ -18,24 +18,52 @@ const functionName = () => {}
 functionName();
 */
 
-const input = (type) => {
+const inputElement = (type, name, label) => {
     return `
-        <input type="${type}">
+        <div>
+            <label>${label}</label>
+            <input type="${type}"name="${name}">
+        </div>
     `
 }
-const form = `
+const formElement = `
     <form id="form">
-        ${ input("text") }
-        ${ input("file") }
-        ${ input("email") }
-        ${ input("radio") }
-        ${ input("chackbox") }
+        ${ inputElement("text", "firstName", "keresztneved") }
+        ${ inputElement("file", "profilePicture", "profilneved") }
+        ${ inputElement("email", "personalEmail", "email címed") }
+        ${ inputElement("radio", "newsletter", "szeretnél-e hírlevelet") }
+        ${ inputElement("chackbox", "terms", "elfogadod-e") }
+        <button>OK</buttom>
     </form>
-`
+`;
+
+const formSubmit = (event) => {
+    event.preventDefault();
+    console.log(event);
+    event.target.classList.add("submitted");
+}
+
+const inputEvent = (event) => {
+    console.log(event.target.value);
+    document.getElementById("inputValueContent").innerHTML = event.target.value;
+}
 
 function loadEvent() {
     const root = document.getElementById("root");
-    root.insertAdjacentHTML("beforeend", form);
-}
+    root.insertAdjacentHTML("beforeend", formElement);
+    root.insertAdjacentHTML("beforeend", `
+    <div id="inputValueContent"></div>
+    `);
 
+    const form = document.getElementById("form");
+    form.addEventListener("submit", formSubmit);
+    
+
+    const inputList = form.querySelectorAll("input");
+    for (const input of inputList) {
+        input.addEventListener("input", inputEvent)
+    }
+}
 window.addEventListener('load', loadEvent);
+
+//átalakítani: megvizsgálni inputelemen belül, hogyha az aktuális ha az aktuális inputnak a name attribútuma "firstName" csak akkor írja bele ebbe a div-be a tartalmat
