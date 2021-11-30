@@ -32,8 +32,8 @@ const formElement = `
         ${ inputElement("file", "profilePicture", "profilneved") }
         ${ inputElement("email", "personalEmail", "email címed") }
         ${ inputElement("radio", "newsletter", "szeretnél-e hírlevelet") }
-        ${ inputElement("chackbox", "terms", "elfogadod-e") }
-        <button>OK</buttom>
+        ${ inputElement("checkbox", "terms", "elfogadod-e") }
+        <button>OK</button>
     </form>
 `;
 
@@ -43,10 +43,15 @@ const formSubmit = (event) => {
     event.target.classList.add("submitted");
 }
 
+
+
 const inputEvent = (event) => {
     console.log(event.target.value);
+    if (event.target.name != "firstName"){}
+    else {
     document.getElementById("inputValueContent").innerHTML = event.target.value;
-}
+    }
+};
 
 function loadEvent() {
     const root = document.getElementById("root");
@@ -66,4 +71,4 @@ function loadEvent() {
 }
 window.addEventListener('load', loadEvent);
 
-//átalakítani: megvizsgálni inputelemen belül, hogyha az aktuális ha az aktuális inputnak a name attribútuma "firstName" csak akkor írja bele ebbe a div-be a tartalmat
+//átalakítani: megvizsgálni inputelemen belül, ha az aktuális inputnak a name attribútuma "firstName" csak akkor írja bele ebbe a div-be a tartalmat
