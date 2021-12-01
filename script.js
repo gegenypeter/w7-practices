@@ -51,7 +51,7 @@ const formElement = `
         ${ inputElement("text", "firstName", "keresztneved:") }
         ${ inputElement("email", "personalEmail", "email címed:") }
         ${ inputElement("file", "profilePicture", "profilképed:") }
-        ${ selectElement("select", "where", "hol hallottad?", ["válassz", "Internetről", "vagyez"]) }
+        ${ selectElement("select", "where", "hol hallottad?", ["válassz", "Internetről", "vagyez", "vagy akár ez"]) }
         ${ inputElement("checkbox", "newsletter", "szeretnél-e hírlevelet?") }
         ${ inputElement("checkbox", "terms", "elfogadod-e?") }
         <button>OK</button>
