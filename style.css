@@ -58,9 +58,7 @@ input[type=select] {
     position: absolute;
     left: 150px;
     transform: translateY(70%);
-
 }
-
 
 input:focus{
     background-color: lightgreen;
