@@ -1,0 +1,84 @@
+body {
+    font-family: sans-serif;
+    background-color: lightslategray;
+}
+#root {
+    position: relative;
+}
+
+#form {
+    background-color:midnightblue;
+    padding: 10px;
+    color: moccasin;
+    padding-left: 30px;
+    width: 350px;
+    border: 1px solid lightgreen;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    top: 50px;
+    justify-content: center;
+    left: 100px;
+    line-height: 50px;
+}
+
+#form.div {
+    position: absolute;
+    display: inline;
+    left: 100px;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    transform: translateY(135%);
+    left: 10px;
+}
+
+input[type=text] {
+    position: absolute;
+    left: 150px;
+    transform: translateY(70%);
+}
+
+input[type=email] {
+    position: absolute;
+    left: 150px;
+    transform: translateY(70%);
+}
+
+input[type=file] {
+    position: absolute;
+    left: 150px;
+    transform: translateY(70%);
+}
+
+input[type=select] {
+    position: absolute;
+    left: 150px;
+    transform: translateY(70%);
+
+}
+
+
+input:focus{
+    background-color: lightgreen;
+}
+
+button {
+    background-color: lightgreen;
+    height: 30px;
+    width: 330px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+button:active {
+    background-color: seagreen;
+}
+
+label {
+    padding-right: 20px;
+}
